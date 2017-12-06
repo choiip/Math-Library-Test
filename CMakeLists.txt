@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.1)
 
 # Name of the cmake project.
 project(MathLibraryTest)
 
 # All libraries are header only.
-include_directories(lib/cml-1_0_2)
-include_directories(lib/eigen-eigen-13a11181fc5a)
-include_directories(lib/glm-0.9.3.B)
+include_directories(lib/cml)
+include_directories(lib/eigen)
+include_directories(lib/glm)
 
 # NOTE:
 # This next section is copy pasted from the Eigen CMakeLists.txt located in the
@@ -17,6 +17,8 @@ include_directories(lib/glm-0.9.3.B)
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
+
+set (CMAKE_CXX_STANDARD 11)
 
 include(CheckCXXCompilerFlag)
 if(CMAKE_COMPILER_IS_GNUCXX)
